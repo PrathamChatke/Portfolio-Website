@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* GLOBAL SMOOTHNESS */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* CARD HOVER */
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+/* GLOW EFFECT */
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+}
+
+/* BUTTON SCALE */
+.btn-hover:hover {
+  transform: scale(1.08);
+}
+
+/* TEXT GLOW */
+.text-glow:hover {
+  color: #60a5fa;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.8);
+}
