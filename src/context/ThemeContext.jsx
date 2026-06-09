@@ -18,15 +18,17 @@ export default function ThemeProvider({ children }) {
   }, []);
 
   const toggleTheme = () => {
-    if (darkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    }
-    setDarkMode(!darkMode);
-  };
+  const newMode = !darkMode;
+  setDarkMode(newMode);
+
+  if (newMode) {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+};
 
   return (
     <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
