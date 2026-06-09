@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import Scene from "../three/Scene";
+//This import is for 3d sphere
+// import Scene from "../three/Scene";
 import { Link } from "react-scroll";
 
 export default function Hero() {
@@ -62,14 +63,15 @@ export default function Hero() {
         </Link>
       </motion.div>
 
+    {/* This was 3d sphere code */}
       {/* 🎯 3D SECTION */}
-      <div className="mt-10 w-full max-w-2xl 
+      {/* <div className="mt-10 w-full max-w-2xl 
         rounded-xl 
         bg-transparent dark:bg-white/5 
         border border-gray-200 dark:border-white/10 
         p-4 shadow-lg">
         <Scene />
-      </div>
+      </div> */}
     </section>
   );
 }

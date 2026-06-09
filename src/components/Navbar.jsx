@@ -1,4 +1,5 @@
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
@@ -12,8 +13,9 @@ export default function Navbar() {
     flex justify-center gap-8 
     border-b border-gray-300 dark:border-white/10 shadow-lg">
 
+      {/* 🔹 Scroll Links (same page) */}
       {["home", "about", "skills", "projects", "contact"].map((item) => (
-        <Link
+        <ScrollLink
           key={item}
           to={item}
           smooth={true}
@@ -30,9 +32,19 @@ export default function Navbar() {
           <span className="absolute left-0 -bottom-1 w-0 h-[2px] 
           bg-blue-500 dark:bg-blue-400 
           transition-all duration-300 group-hover:w-full"></span>
-        </Link>
+        </ScrollLink>
       ))}
 
+      {/* 🔹 NEW: Projects Page Link */}
+      <RouterLink
+        to="/projects"
+        className="cursor-pointer text-gray-700 dark:text-gray-300 
+        hover:text-blue-500 dark:hover:text-blue-400 font-medium"
+      >
+        ALL PROJECTS
+      </RouterLink>
+
+      {/* 🌙 Theme Toggle */}
       <button
         onClick={toggleTheme}
         className="ml-6 px-3 py-1 rounded 
